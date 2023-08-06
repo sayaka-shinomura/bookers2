@@ -26,14 +26,30 @@
             <ul class="navbar-nav ml-auto">
             <!--#サインインしているときのヘッダー-->
             <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-white' %>
+            <li>
+              <a class="nav-link text-light", href="/">
+              <i class="fas fa-home", area-hidden="true"></i>
+              Home
+              </a>
             </li>
-            <li class="nav-item">
+            <li>
+              <a class="nav-link text-light", href="/users">
+              <i class="fas fa-user-plus", area-hidden="true"></i>
+              Users
+              </a>
               <%= link_to 'Users', user_path(current_user.id), class: 'nav-link text-white' %>
             </li>
-            <li class="nav-item">
-              <%= link_to 'Books', books_path, class: 'nav-link text-white' %>
+            <li>
+              <a class="nav-link text-light", href="/books">
+              <i class="fas fa-book", area-hidden="true"></i>
+              Books
+              </a>
+            </li>
+            <li>
+              <a class="nav-link text-light", rel="nofollow", deta-method="delete", href="/users/sign_out">
+              <i class="fas fa-sign-out-alt", area-hidden="true"></i>
+              Log out
+              </a>
             </li>
             <li class="nav-item">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
