@@ -7,8 +7,11 @@ class User < ApplicationRecord
   #1:Nの1側にあたるモデル
   has_many :books, dependent: :destroy
 
- #プロフィール画像を保存
- has_one_attached :profile_image
+  #プロフィール画像を保存
+  has_one_attached :profile_image
+
+  #名前が存在しているかを確認するバリデーション
+  validates :name, presence: true
 
  def get_profile_image(width, height)
    unless profile_image.attached?
