@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  #ログインしていない状態でアクセス
+  before_action :authenticate_user!, except: [:top]
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   #サインイン後の遷移先
