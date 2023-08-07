@@ -1,10 +1,5 @@
 class BooksController < ApplicationController
 
-  #投稿画面
-  def new
-    @book = Book.new
-  end
-
   #投稿データの保存
   def create
     @book = Book.new(book_params)
@@ -17,6 +12,9 @@ class BooksController < ApplicationController
   end
 
   def index
+    #新規投稿
+    @book = Book.new
+    #投稿一覧
     @books = Book.all
   end
 
