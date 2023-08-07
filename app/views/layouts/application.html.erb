@@ -16,7 +16,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="vavbar-brand" href="/">
+          <a class="vavbar-brand text-light" href="/">
             <span>Bookers</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,17 +56,30 @@
             </li>
             <!--#サインインしていない時のヘッダー-->
             <% else %>
-            <li class="nav-item">
-              <%= link_to 'Home', "/", class: 'nav-link text-white' %>
+            <li>
+              <a class="nav-link text-light", href="/">
+              <i class="fas fa-home", area-hidden="true"></i>
+              Home
+              </a>
             </li>
-            <li class="nav-item">
-              <%= link_to 'About', about_path, class: 'nav-link text-white' %>
+            <li>
+            <li>
+              <a class="nav-link text-light", href="/homes/about">
+              <i class="fas fa-link", area-hidden="true"></i>
+              About
+              </a>
             </li>
-            <li class="nav-item">
-              <%= link_to "Sign in", new_user_registration_path, class: 'nav-link text-white' %>
+            <li>
+              <a class="nav-link text-light", href="/users/sign_up">
+              <i class="fas fa-user-plus", area-hidden="true"></i>
+              Sign up
+              </a>
             </li>
-            <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
+            <li>
+              <a class="nav-link text-light", href="/users/sign_in">
+              <i class="fas fa-sign-in-alt", area-hidden="true"></i>
+              Log in
+              </a>
             </li>
             <% end %>
         </div>
