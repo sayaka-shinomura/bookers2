@@ -1,15 +1,26 @@
-<h1>User info</h1>
-
-<%= image_tag @user.get_profile_image(80,80) %>
-<table class="table">
-    <tbody>
-        <tr></tr>
-        <tr>
-            <th>neme</th>
-            <th><%= @user.name %></th>
-        <tr>
-            <th>introduction</th>
-            <th><%= @user.introduction %></th>
-        </tr>
-    </tbody>
-</table
+<div class="container px-5 px-sm-0">
+    <div class="row">
+        <div class="col-md-3">
+            <h1>User info</h1>
+            <%= image_tag @user.get_profile_image(80,80) %>
+            <table class="table">
+             <tbody>
+              <tr></tr>
+              <tr>
+               <th>neme</th>
+               <th><%= @user.name %></th>
+              <tr>
+               <th>introduction</th>
+               <th><%= @user.introduction %></th>
+              </tr>
+             </tbody>
+            </table>
+            <!--#編集画面へのボタン-->
+            <div class="row">
+                <%= link_to edit_user_path(@user.id), class:'btn btn-outline-secondary btn-block' do %>
+                <i class="fas fa-user-cog", area-hidden="true"></i>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
