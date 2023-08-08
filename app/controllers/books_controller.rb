@@ -12,6 +12,8 @@ class BooksController < ApplicationController
   end
 
   def index
+    #ユーザー詳細
+
     #新規投稿
     @book = Book.new
     #投稿一覧
