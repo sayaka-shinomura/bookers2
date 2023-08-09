@@ -28,7 +28,7 @@
             <!--#サインインしているときのヘッダー-->
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to root_path, class: 'nav-link text-white' do %>
+              <%= link_to books_path, class: 'nav-link text-white' do %>
               <i class="fas fa-home", area-hidden="true"></i>
               <span>Home</span>
               <% end %>
@@ -61,7 +61,7 @@
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to root_path, class: 'nav-link text-white' do %>
+              <%= link_to about_path, class: 'nav-link text-white' do %>
               <i class="fas fa-link", area-hidden="true"></i>
               <span>About</span>
               <% end %>
