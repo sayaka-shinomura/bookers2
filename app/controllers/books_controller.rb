@@ -1,13 +1,17 @@
 class BooksController < ApplicationController
 
   #投稿データの保存
+
   def create
+    @user = current_user
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
-      redirect_to books_path
+      flash[:notice] = "You have created book successfully."
+      redirect_to '/books'
     else
-      render :new
+      @books = Book.all
+      render "index"
     end
   end
 

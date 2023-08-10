@@ -8,7 +8,7 @@
         <% if @user.errors.any? %>
           <ul class="alert alert-danger" role="alert">
             <h6 class="alert-heading">
-              <%= @user.errors.count %>件のエラーが発生しました
+              <%= @user.errors.count %>error prohibited this obj from being saved:
             </h6>
             <% @user.errors.full_messages.each do |message| %>
               <li><%= message %></li>

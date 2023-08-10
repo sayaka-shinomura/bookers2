@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
      <label for="inputBody"><div class="form-group">Opinion</label>
-     <%= f.text_area :body, class:"form-control book_body", id:"inputBody" %>
+     <%= f.text_area :body, autofocus: true, class:"form-control", id:"inputBody" %>
     </div>
     <div class="form-group">
      <%= f.submit 'Update User', class:"btn btn-success" %>
