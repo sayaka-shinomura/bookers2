@@ -17,6 +17,7 @@ class BooksController < ApplicationController
 
   def index
     #ユーザー詳細
+    @user = User.all
 
     #新規投稿
     @book = Book.new
@@ -36,6 +37,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update (book_params)
+      flash[:notice] = "You have updated book successfully."
       redirect_to @book
     else
       render :edit

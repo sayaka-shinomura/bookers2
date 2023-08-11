@@ -10,8 +10,11 @@ class User < ApplicationRecord
   #プロフィール画像を保存
   has_one_attached :profile_image
 
-  #名前が存在しているかを確認するバリデーション
-  validates :name, presence: true
+  #名前のバリデーション
+  validates :name, presence: true, uniqueness: true, length: { in: 2..20 }
+
+  #introductionのバリデーション
+  validates :introduction, length: { maximum: 50 }
 
  def get_profile_image(width, height)
    unless profile_image.attached?
