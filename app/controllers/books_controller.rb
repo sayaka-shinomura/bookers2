@@ -18,7 +18,7 @@ class BooksController < ApplicationController
 
   def index
     #ユーザー詳細
-    @user = User.all
+	  @user = User.find(params[:id])
 
     #新規投稿
     @book = Book.new
