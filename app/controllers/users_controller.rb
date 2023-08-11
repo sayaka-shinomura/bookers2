@@ -19,9 +19,9 @@ class UsersController < ApplicationController
     is_matching_login_user
 
     @user = User.find(params[:id])
-    if @user.update (user_params)
+    if @user.update(user_params)
       flash[:notice] = "You have updatecurrent_user.idd user successfully."
-    　redirect_to root_path
+      redirect_to user_path(@user.id)
     else
       render :edit
     end

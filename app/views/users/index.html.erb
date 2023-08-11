@@ -1,22 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-
-<h1>Users</h1>
-
-<div id="users_index-table">
-  <table cellspacing="10">
-    <thead>
-      <tr>
-        <th align="left">image</th>
-        <th align="left">name</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-    <tr><% @users.each do |user| %></tr>
-      <td><%= image_tag @user.get_profile_image(80,80) %></td>
-      <td><%= user.name %></td>
-      <td><%= link_to "Show", book_path(user.id) %></td>
-    <% end %>
-  </tbody>
-  </table>
+<div class="col-md-8 offset-md-1">
+    <h2>Users</h2>
+    <table class="table table-hover table-invarse">
+        <thead>
+         <tr>
+          <th></th>
+          <th align="left">Image</th>
+          <th align="left">Nme</th>
+          <th colspan="3"></th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr><% @users.each do |user| %></tr>
+             <td>
+              <%= image_tag user.get_profile_image(80,80) %>
+             </td>
+             <td><%= user.name %></td>
+             <td>
+              <%= link_to user_path(user) do %>
+              <span>Show</span>
+              <% end %>
+             </td>
+            <% end %>
+        </tbody>
+        </table>
 </div>
+
