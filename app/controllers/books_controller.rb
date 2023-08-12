@@ -17,18 +17,15 @@ class BooksController < ApplicationController
   end
 
   def index
-    #ユーザー詳細
-	  @user = User.find(params[:id])
-
-    #新規投稿
-    @book = Book.new
-    #投稿一覧
     @books = Book.all
+    @book = Book.new
+    @user = current_user
   end
 
   def show
     @book = Book.find(params[:id])
     @books = Book.all
+    @user = current_user
   end
 
   def edit
