@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   #サインイン後の遷移先
   def after_sign_in_path_for(resource)
-    user_path(@user)
+    user_path(@user.id)
   end
 
   #サインアウト後の遷移先

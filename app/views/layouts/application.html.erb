@@ -28,7 +28,7 @@
             <!--#サインインしているときのヘッダー-->
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to users_path, class: 'nav-link text-white' do %>
+              <%= link_to user_path(@user.id), class: 'nav-link text-white' do %>
               <i class="fas fa-home", area-hidden="true"></i>
               <span>Home</span>
               <% end %>
